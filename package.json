@@ -1,0 +1,24 @@
+{
+  "name": "git-test",
+  "version": "1.0.0",
+  "description": "this is a folder to learn Git and Node",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Longlhse161497/FER201m.git"
+  },
+  "author": "HLong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Longlhse161497/FER201m/issues"
+  },
+  "homepage": "https://github.com/Longlhse161497/FER201m#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
