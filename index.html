@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
@@ -34,14 +33,16 @@
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
             </div>
-            <a role="button" class="btn btn-lg text-white" data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in fa-lg"></span> Login</a> 
+            <a role="button" class="btn btn-lg text-white" id="loginToggler"><span class="fa fa-sign-in fa-lg"></span> Login</a> 
         </div>
-        <div id="loginModal" class="modal fade" role="dialog">
+    </nav>
+
+    <div id="loginModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg" role="content">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Login</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button" class="close closeLogin">&times;</button>
                     </div>
                     <div class="modal-body">
                         <form>
@@ -62,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto closeLogin">Cancel</button>
                                 <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
                             </div>
                         </form>
@@ -70,7 +71,6 @@
                 </div>
             </div>
         </div>
-    </nav>
 
     <header class="jumbotron">
         <div class="container">
@@ -83,66 +83,65 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning text-dark" data-toggle="modal" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="bottom" data-target="#mymodal">Reserve a Table</a>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" role="dialog" tabindex="-1" id="mymodal">
-            <div class="modal-dialog modal-md" role="content">
-                <div class="modal-content">
-                    <div class="col-12 col-sm-12">
-                        <div class="modal-header bg-warning">
-                            <h3 class="text-dark">Reserve a table</h3>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group row">
-                                    <label class="form-check-label col-sm-3 text-dark">Number of guests</label>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                        <label class="form-check-label text-dark" for="inlineRadio1">1</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                        <label class="form-check-label text-dark" for="inlineRadio2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                        <label class="form-check-label text-dark" for="inlineRadio3">3</label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="form-check-label col-sm-3 text-dark">Section</label>
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-success active text-dark">
-                                            <input type="radio" name="options" id="option1" autocomplete="off" checked>Non-smoking
-                                        </label>
-                                    </div>
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-danger text-dark">
-                                            <input type="radio" name="options" id="option2" autocomplete="off">Smoking
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="form-check-label col-sm-3 text-dark">Date and time</label>
-                                    <div>
-                                        <input type="text" name="" placeholder="date">
-                                        <input type="text" name="" placeholder="time">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <a class="btn btn-secondary btn-lg text-dark" data-dismiss="modal">Cancel</a>
-                                    <a class="btn btn-primary btn-lg text-dark" href="#">Reserve</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <a role="button" id="modalToggler" class="btn btn-block nav-link btn-warning text-dark" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="bottom">Reserve a Table</a>
                 </div>
             </div>
         </div>
     </header>
+
+    <div class="modal fade" role="dialog" id="mymodal">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Reserve a table</h3>
+                        <button type="button" class="close closeMyModal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group row">
+                                <label class="form-check-label col-sm-3">Number of guests</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <label class="form-check-label" for="inlineRadio3">3</label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="form-check-label col-sm-3">Section</label>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" name="options" id="option1" autocomplete="off" checked>Non-smoking
+                                    </label>
+                                </div>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-danger">
+                                        <input type="radio" name="options" id="option2" autocomplete="off">Smoking
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="form-check-label col-sm-3">Date and time</label>
+                                <div>
+                                    <input type="text" name="" placeholder="date">
+                                    <input type="text" name="" placeholder="time">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <button type="button" class="btn btn-secondary btn-lg closeMyModal offset-3">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-lg">Reserve</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <div class="container">
         <div class="row row-content">
@@ -311,6 +310,22 @@
                 $("#carouselButton").children("span").removeClass('fa-play');
                 $("#carouselButton").children("span").addClass('fa-pause');
             }
+        });
+
+        $("#loginToggler").click(function(){
+            $("#loginModal").modal('show');
+        });
+
+        $(".closeLogin").click(function(){
+            $("#loginModal").modal('hide');
+        });
+
+        $(".closeMyModal").click(function(){
+            $("#mymodal").modal('hide');
+        });
+
+        $("#modalToggler").click(function(){
+            $("#mymodal").modal('show');
         });
     </script>
 

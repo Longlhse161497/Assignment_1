@@ -2,6 +2,7 @@ $lt-gray: #ddd;
 $background-dark: #512DA8;
 $background-light: #9575CD;
 $background-pale: #D1C4E9;
+$background-modal: #D1C5E8; 
 
 $carousel-item-height: 300px;
 
@@ -72,4 +73,27 @@ body{
 	z-index: 1;
 }
 
+#mymodal{
+	.modal-content{
+		background-color: $background-modal;
+	}
+	.modal-header{
+		background: $background-dark;
+		h3{
+			color: white;
+		}
+	}
+}
+
+#loginModal{
+	.modal-content{
+		background-color: $background-modal;
+	}
+	.modal-header{
+		background: $background-dark;
+		h4{
+			color: white;
+		}
+	}
+}
 

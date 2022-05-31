@@ -64,4 +64,24 @@ body {
   z-index: 1;
 }
 
+#mymodal .modal-content {
+  background-color: #D1C5E8;
+}
+#mymodal .modal-header {
+  background: #512DA8;
+}
+#mymodal .modal-header h3 {
+  color: white;
+}
+
+#loginModal .modal-content {
+  background-color: #D1C5E8;
+}
+#loginModal .modal-header {
+  background: #512DA8;
+}
+#loginModal .modal-header h4 {
+  color: white;
+}
+
 /*# sourceMappingURL=styles.css.map */
